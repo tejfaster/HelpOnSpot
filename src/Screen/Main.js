@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, Text, StyleSheet, Image, Dimensions, TouchableOpacity, ImageBackground } from 'react-native'
-import {wp,hp} from '../Component/Style'
+import { wp, hp } from '../Component/Style'
 import { useNavigation } from '@react-navigation/native'
 
 const image = [
@@ -36,14 +36,28 @@ export default function Main() {
                 txt={"NearBy"}
                 click={() => navigation.navigate('Map')} />
 
-            <View style={{ alignSelf: 'center' }}>
-                <TouchableOpacity 
-                style={styles.button}
-                onPress={()=> navigation.navigate('AlertCretae')}>
-                    <Text style={styles.buttontxt}>SOS</Text>
-                </TouchableOpacity>
+            <View style={{
+                flexDirection: 'row',
+                justifyContent: 'space-around'
+            }}>
+                <CircleButton
+                    txt='SOS'
+                />
+                <CircleButton
+                    txt='Alert'
+                    style={{height:hp('14%'),width:wp('30%')}}
+                    onpress={()=>navigation.navigate('AlertCrete')}
+                />
             </View>
+
         </View>
+    )
+}
+const CircleButton = ({ onpress, txt, style }) => {
+    return (
+        <TouchableOpacity style={[styles.button, style]} onPress={onpress}>
+            <Text style={styles.buttontxt}>{txt}</Text>
+        </TouchableOpacity>
     )
 }
 
@@ -80,7 +94,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         marginTop: 15,
         alignSelf: 'center',
-        
+
     },
     orangecolor: {
         backgroundColor: 'rgba(255, 146, 43,0.8)',
@@ -98,9 +112,10 @@ const styles = StyleSheet.create({
         height: 100,
         width: 100,
         marginTop: 100,
-        borderRadius: 50,
+        borderRadius: 100,
         backgroundColor: 'orange',
         justifyContent: 'center',
+        alignSelf:'center'
     },
     buttontxt: {
         fontFamily: 'Arial',

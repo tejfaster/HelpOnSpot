@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Platform, StyleSheet, View, Text, Image, TouchableOpacity, Alert } from 'react-native';
+import { Splash, wp, hp } from '../Component/Style'
+
 export default class Myapp extends Component {
     constructor() {
         super();
@@ -17,15 +19,15 @@ export default class Myapp extends Component {
         var that = this;
         setTimeout(function () {
             that.Hide_Splash_Screen();
-        }, 2000);
+        }, 5000);
     }
 
     render() {
         let Splash_Screen = (
             <View style={styles.SplashScreen_RootView}>
                 <View style={styles.SplashScreen_ChildView}>
-                    <Image source={ }
-                        style={{ width: '100%', height: '100%', resizeMode: 'contain' }} />
+                    <Image source={Splash}
+                        style={{ width: wp('100%'), height: hp('100%')}} />
                 </View>
             </View>)
         return (
@@ -45,7 +47,6 @@ const styles = StyleSheet.create(
             flex: 1,
             justifyContent: 'center',
             alignItems: 'center',
-            paddingTop: (Platform.OS === 'ios') ? 20 : 0
         },
 
         SplashScreen_RootView:
@@ -62,7 +63,7 @@ const styles = StyleSheet.create(
         {
             justifyContent: 'center',
             alignItems: 'center',
-            backgroundColor: '#00BCD4',
+            backgroundColor: 'white',
             flex: 1,
         },
     });  

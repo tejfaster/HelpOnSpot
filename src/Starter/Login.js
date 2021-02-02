@@ -1,6 +1,6 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useEffect } from 'react'
 import { SafeAreaView, View, Image, Text, ImageBackground, StyleSheet, TextInput } from 'react-native'
-import { wp, hp, BackgroundImage, Logo } from '../Component/Style'
+import { wp, hp, BackgroundImage, Logo, Splash } from '../Component/Style'
 
 export default function Login({ navigation }) {
     const [credentials, setCredentials] = useState({
@@ -8,22 +8,34 @@ export default function Login({ navigation }) {
         password: '',
     })
     const { email, password } = credentials
+    const [isVisible, setVisible] = useState(true)
 
+    useEffect(() => {
+        setTimeout(() => {
+            Hide_Splash_Screen()
+            console.log("hello")
+        }, 5000);
+    });
+
+    const Hide_Splash_Screen = () => {
+        setVisible(false)
+    }
+
+    // console.log(isVisible)
     const onLoginPress = () => {
         if (!email) {
             alert('Email required')
         } else if (!password) {
             alert('Password required')
-        } else if(email === email & password === password)
-        {        
+        } else if (email === email & password === password) {
             navigation.navigate('Need')
-        }else{
+        } else {
             return null
         }
 
     }
-    
-    
+
+
     const handleOnChange = (name, value) => {
         setCredentials({
             ...credentials,
@@ -32,7 +44,7 @@ export default function Login({ navigation }) {
     }
     return (
         <SafeAreaView>
-            <View>
+            <View>                
                 <ImageBackground source={BackgroundImage} style={styles.background}>
                     <Image source={Logo} style={styles.logo} />
                     <View style={{ height: hp('3%') }} />
@@ -49,16 +61,27 @@ export default function Login({ navigation }) {
                         onChangeText={(text) => handleOnChange('password', text)}
                     />
                     <View style={{ flexDirection: 'row', justifyContent: 'center', margin: wp('2%') }}>
-                        <Button button='Login' onpress={onLoginPress} />
+                        <Button button='Login' onpress={()=>navigation.navigate('Need')} />
                         <View style={{ width: wp('2%') }} />
                         <Button button='SignUp' onpress={() => navigation.navigate('Signup')} />
                     </View>
                 </ImageBackground>
             </View>
+
         </SafeAreaView>
     )
 }
 
+const Splash_Screen = () => {
+    return (
+        <View style={styles.SplashScreen_RootView}>
+            <View style={styles.SplashScreen_ChildView}>
+                <Image source={Splash}
+                    style={{ width: wp('100%'), height: hp('100%') }} />
+            </View>
+        </View>
+    )
+}
 const Txtinput = ({
     placeholder,
     value,
@@ -140,7 +163,23 @@ const styles = StyleSheet.create({
         fontFamily: 'Arial',
         fontWeight: 'bold',
         fontSize: hp('2%'),
-    }
+    },
+    SplashScreen_RootView:
+    {
+        justifyContent: 'center',
+        flex: 1,
+        margin: 10,
+        position: 'absolute',
+        width: '100%',
+        height: '100%',
+    },
+    SplashScreen_ChildView:
+    {
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: 'white',
+        flex: 1,
+    },
 })
 
 

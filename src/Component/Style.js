@@ -18,6 +18,7 @@ const Male = require('../../assets/male.png')
 const Female = require('../../assets/female.png')
 
 
+
 export {
     wp,
     hp,

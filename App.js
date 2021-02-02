@@ -20,7 +20,7 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import { HeaderComp, FooterComp, Profile } from './src/Component'
-import { Main, AlertCrete,Homes } from './src/Screen'
+import { Main, AlertCrete, Homes } from './src/Screen'
 import { Login, Signup, Splash } from './src/Starter'
 
 import Map from './src/Screen/Map'
@@ -91,12 +91,12 @@ const App = () => {
             headerShown: false,
           }}
         />
-          <Stack.Screen name='Need' component={Homes}
-        options={{
-          headerShown: true,
-          headerLeft: false,
-          headerRight: () => (<HeaderComp />)
-        }} 
+        <Stack.Screen name='Need' component={Homes}
+          options={{
+            headerShown: true,
+            headerLeft: false,
+            headerRight: () => (<HeaderComp />)
+          }}
         />
         <Stack.Screen name="Home" component={MyTabs}
           options={{
@@ -104,8 +104,8 @@ const App = () => {
             headerRight: () => (<HeaderComp />)
           }} />
         <Stack.Screen name="MyDrawer" component={MyDrawer} />
-        
-        <Stack.Screen name="AlertCretae" component={AlertCrete}
+
+        <Stack.Screen name="AlertCrete" component={AlertCrete}
           options={{
             headerRight: () => (<HeaderComp />)
           }} />

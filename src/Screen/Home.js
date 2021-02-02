@@ -16,12 +16,12 @@ export default function Homes({navigation}) {
             <View style={{ marginTop: hp('3%'), flexDirection: 'row', justifyContent: 'space-around' }}>
                 <CirecleButton
                     txt="Help Others"
-                    press = {() => navigation.navigate('Home')}
+                    press = {() => navigation.navigate('Map')}
                 />
                 <CirecleButton
                     txt="Need Help"
                     style={{ height: hp('20%'), width: wp('42%') }}
-                    press = {() => navigation.navigate('Map')}
+                    press = {() => navigation.navigate('Home')}
                 />
             </View>
         </View>
