@@ -7,10 +7,10 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import { HeaderComp, FooterComp, Profile } from '../Component'
 import { } from '../Component/Style'
-import { Main, AlertCretae } from '../Main'
+import { Main, AlertCretae } from '../Screen'
 import { Login, Signup, Splash } from '../Starter'
 
-import Map from '../Main/Map'
+import Map from '../Screen/Map'
 import Chatbox from '../ChatBox/Chatbox'
 
 const Drawer = createDrawerNavigator();

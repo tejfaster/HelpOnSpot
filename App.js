@@ -1,114 +1,111 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
+// import Route from './src/Routing/Route'
+// import React from 'react'
+// import { View, Text } from 'react-native'
 
-import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-} from 'react-native';
+// export default function App() {
+//   return (
+//     <View>
+//       <Route/>
+//     </View>
+//   )
+// }
+import * as React from 'react';
+import { View, Text } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator, HeaderTitle } from '@react-navigation/stack';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+import { HeaderComp, FooterComp, Profile } from './src/Component'
+import { Main, AlertCretae } from './src/Screen'
+import { Login, Signup, Splash } from './src/Starter'
 
-const App: () => React$Node = () => {
-  return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}>
-          <Header />
-          {global.HermesInternal == null ? null : (
-            <View style={styles.engine}>
-              <Text style={styles.footer}>Engine: Hermes</Text>
-            </View>
-          )}
-          <View style={styles.body}>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Step One</Text>
-              <Text style={styles.sectionDescription}>
-                Edit <Text style={styles.highlight}>App.js</Text> to change this
-                screen and then come back to see your edits.
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>See Your Changes</Text>
-              <Text style={styles.sectionDescription}>
-                <ReloadInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Debug</Text>
-              <Text style={styles.sectionDescription}>
-                <DebugInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Learn More</Text>
-              <Text style={styles.sectionDescription}>
-                Read the docs to discover what to do next:
-              </Text>
-            </View>
-            <LearnMoreLinks />
-          </View>
-        </ScrollView>
-      </SafeAreaView>
-    </>
-  );
-};
+import Map from './src/Screen/Map'
+import Chatbox from './src/ChatBox/Chatbox'
 
-const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: Colors.lighter,
-  },
-  engine: {
-    position: 'absolute',
-    right: 0,
-  },
-  body: {
-    backgroundColor: Colors.white,
-  },
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-    color: Colors.black,
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-    color: Colors.dark,
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-  footer: {
-    color: Colors.dark,
-    fontSize: 12,
-    fontWeight: '600',
-    padding: 4,
-    paddingRight: 12,
-    textAlign: 'right',
-  },
-});
+const Drawer = createDrawerNavigator();
+const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
 
-export default App;
+function MyTabs() {
+    return (
+        <Tab.Navigator>
+            <Tab.Screen name="Home" component={Main}
+                options={{
+                    tabBarIcon: () => (<FooterComp name='home' />)
+                }}
+            />
+            <Tab.Screen name="Messenger" component={Chatbox}
+                options={{
+                    tabBarIcon: () => (<FooterComp name='message1' />)
+                }}
+            />
+        </Tab.Navigator>
+    );
+}
+
+
+function HomeScreen({ navigation }) {
+    return (
+        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+            <Text>Home Screen</Text>
+            <Button
+                title="Go to Details"
+                onPress={() => navigation.navigate('Details')}
+            />
+        </View>
+    );
+}
+
+const MyDrawer = () => {
+    return (
+        <Drawer.Navigator>
+            <Drawer.Screen name="Profile" component={Profile}
+                options={{
+                    headerRight: () => (<HeaderComp />)
+                }}
+            />
+            <Drawer.Screen name="Notifications" component={HomeScreen} />
+        </Drawer.Navigator>
+    )
+}
+
+const App = () => {
+    return (
+        <NavigationContainer>
+            <Stack.Navigator initialRouteName="Login"
+                screenOptions={{
+                    headerTitleAlign: 'center',
+                }}
+            >
+                <Stack.Screen name='Login' component={Login}
+                    options={{
+                        headerShown: false,
+                    }}
+                />
+                <Stack.Screen name='Signup' component={Signup}
+                    options={{
+                        headerShown: false,
+                    }}
+                />
+                <Stack.Screen name="Home" component={MyTabs}
+                    options={{
+                        headerShown: true,
+                        headerLeft: false,
+                        headerRight: () => (<HeaderComp />)
+                    }} />
+                <Stack.Screen name="MyDrawer" component={MyDrawer} />
+                <Stack.Screen name="AlertCretae" component={AlertCretae}
+                    options={{
+                        headerRight: () => (<HeaderComp />)
+                    }} />
+                <Stack.Screen name="Map" component={Map}
+                    options={{
+                        headerRight: () => (<HeaderComp />)
+                    }} />
+            </Stack.Navigator>
+        </NavigationContainer>
+    )
+}
+
+export default App

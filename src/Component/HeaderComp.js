@@ -5,11 +5,11 @@ import {
     heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 import Icon from 'react-native-vector-icons/FontAwesome'
-import {useNavigation} from '@react-navigation/native'
+
 
 
 const HeaderComp = ({centerName}) => {
-    const navigation = useNavigation()
+   
     return (
         <View style={{ flexDirection: 'row'}}>
             <Text style={styles.title}>{centerName}</Text>
