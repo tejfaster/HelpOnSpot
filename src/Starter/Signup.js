@@ -27,7 +27,7 @@ export default function Signup({ navigation }) {
             alert('Your confirmPassword is not matching')
         }
         else if(email === email & password === password){
-            navigation.navigate('Home')
+            navigation.navigate('Need')
         }else {
             return null
         }

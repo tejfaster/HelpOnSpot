@@ -7,8 +7,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import { HeaderComp, FooterComp, Profile } from '../Component'
 import { } from '../Component/Style'
-import { Main, AlertCretae } from '../Screen'
-import { Login, Signup, Splash } from '../Starter'
+import { Main, AlertCrete } from '../Screen'
+import { Login, Signup, Splash, Home } from '../Starter'
 
 import Map from '../Screen/Map'
 import Chatbox from '../ChatBox/Chatbox'
@@ -78,6 +78,11 @@ const Route = () => {
                         headerShown: false,
                     }}
                 />
+                <Stack.Screen name='Home' component={Home}
+                    options={{
+                        headerShown: false,
+                    }}
+                />
                 <Stack.Screen name="Home" component={MyTabs}
                     options={{
                         headerShown: true,
@@ -85,7 +90,7 @@ const Route = () => {
                         headerRight: () => (<HeaderComp />)
                     }} />
                 <Stack.Screen name="MyDrawer" component={MyDrawer} />
-                <Stack.Screen name="AlertCretae" component={AlertCretae}
+                <Stack.Screen name="AlertCretae" component={AlertCrete}
                     options={{
                         headerRight: () => (<HeaderComp />)
                     }} />

@@ -13,6 +13,9 @@ const setuuid = (u) =>{
 const Logo = require('../../assets/Logo.png')
 const BackgroundImage = require('../../assets/backgrond.png')
 const Splash = require('../../assets/splashimage.png')
+const Location = require('../../assets/Location.jpg')
+const Male = require('../../assets/male.png')
+const Female = require('../../assets/female.png')
 
 
 export {
@@ -25,4 +28,7 @@ export {
     Logo,
     BackgroundImage,
     Splash,
+    Location,
+    Male,
+    Female
 }

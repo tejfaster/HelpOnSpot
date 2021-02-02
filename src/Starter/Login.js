@@ -16,12 +16,13 @@ export default function Login({ navigation }) {
             alert('Password required')
         } else if(email === email & password === password)
         {        
-            navigation.navigate('Home')
+            navigation.navigate('Need')
         }else{
             return null
         }
 
     }
+    
     
     const handleOnChange = (name, value) => {
         setCredentials({

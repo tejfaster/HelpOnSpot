@@ -2,10 +2,12 @@ import * as React from 'react'
 
 import Main from './Main'
 import Map from './Main'
-import AlertCretae from './AlertCretae'
+import AlertCrete from './AlertCretae'
+import Homes from './Home'
 
 export{
     Main,
     Map,    
-    AlertCretae,
+    AlertCrete,
+    Homes,
 }
