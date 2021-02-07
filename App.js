@@ -1,17 +1,17 @@
 // import React from 'react'
 // import { View, Text } from 'react-native'
-// import Home from './src/Screen/Home'
+// import ContactList from './src/Screen/Contact'
 
 // export default function App() {
 //   return (
 //     <View>
-//       <Home/>
+//       <ContactList/>
 //     </View>
 //   )
 // }
 
 
-// // }
+
 import * as React from 'react';
 import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';

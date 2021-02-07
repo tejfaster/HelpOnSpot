@@ -44,7 +44,7 @@ export default function Login({ navigation }) {
     }
     return (
         <SafeAreaView>
-            <View>                
+            <View>
                 <ImageBackground source={BackgroundImage} style={styles.background}>
                     <Image source={Logo} style={styles.logo} />
                     <View style={{ height: hp('3%') }} />
@@ -61,7 +61,7 @@ export default function Login({ navigation }) {
                         onChangeText={(text) => handleOnChange('password', text)}
                     />
                     <View style={{ flexDirection: 'row', justifyContent: 'center', margin: wp('2%') }}>
-                        <Button button='Login' onpress={()=>navigation.navigate('Need')} />
+                        <Button button='Login' onpress={onLoginPress} />
                         <View style={{ width: wp('2%') }} />
                         <Button button='SignUp' onpress={() => navigation.navigate('Signup')} />
                     </View>

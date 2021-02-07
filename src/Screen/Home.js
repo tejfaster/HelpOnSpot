@@ -1,30 +1,32 @@
 import React from 'react'
-import { View, Text, StyleSheet, ImageBackground, Image, TouchableOpacity } from 'react-native'
+import { View, SafeAreaView, Text, StyleSheet, ImageBackground, Image, TouchableOpacity } from 'react-native'
 import { Location, wp, hp, Male, Female } from '../Component/Style'
 
 
-export default function Homes({navigation}) {
+export default function Homes({ navigation }) {
     return (
-        <View style={{backgroundColor:'white'}}>
-            <Text style={[styles.txtstyle, { marginTop: hp('2%') }]}>Welcome: Sankar</Text>
-            <Text style={styles.txtstyle}>Your Location: Kaveri nager</Text>
-            <View style={{ marginTop: hp('2%'), flexDirection: 'row', justifyContent: 'space-around' }}>
-                <Bg txt='Hospital' dist='23' />
-                <Bg txt='Police' dist='23' />
+        <SafeAreaView>
+            <View style={{ backgroundColor: 'white' }}>
+                <Text style={[styles.txtstyle, { marginTop: hp('2%') }]}>Welcome: Sankar</Text>
+                <Text style={styles.txtstyle}>Your Location: Kaveri nager</Text>
+                <View style={{ marginTop: hp('2%'), flexDirection: 'row', justifyContent: 'space-around' }}>
+                    <Bg txt='Hospital' dist='23' />
+                    <Bg txt='Police' dist='23' />
+                </View>
+                < User txt='2' />
+                <View style={{ marginTop: hp('1%'),marginBottom:hp('2%'), flexDirection: 'row', justifyContent: 'space-around' }}>
+                    <CirecleButton
+                        txt="Help Others"
+                        press={() => navigation.navigate('Map')}
+                    />
+                    <CirecleButton
+                        txt="Need Help"
+                        style={{ height: hp('20%'), width: wp('42%') }}
+                        press={() => navigation.navigate('Home')}
+                    />
+                </View>                
             </View>
-            < User txt='2' />
-            <View style={{ marginTop: hp('3%'), flexDirection: 'row', justifyContent: 'space-around' }}>
-                <CirecleButton
-                    txt="Help Others"
-                    press = {() => navigation.navigate('Map')}
-                />
-                <CirecleButton
-                    txt="Need Help"
-                    style={{ height: hp('20%'), width: wp('42%') }}
-                    press = {() => navigation.navigate('Home')}
-                />
-            </View>
-        </View>
+        </SafeAreaView>
     )
 }
 
@@ -44,7 +46,7 @@ const Bg = ({ txt, dist }) => {
 
 const User = ({ txt }) => {
     return (
-        <View>
+        <View style={{marginTop:hp('4%')}}>
             <ImageBackground source={Male} style={styles.male}>
                 <Image source={Female} style={styles.female} />
             </ImageBackground>
@@ -53,7 +55,7 @@ const User = ({ txt }) => {
     )
 }
 
-const CirecleButton = ({ txt, style,press }) => {
+const CirecleButton = ({ txt, style, press }) => {
     return (
         <TouchableOpacity style={[styles.button, style]} onPress={press}>
             <Text style={[styles.txtcircle, { color: 'white' }]} >
@@ -97,13 +99,13 @@ const styles = StyleSheet.create({
         alignSelf: 'center'
     },
     female: {
-        height: hp('25%'),
+        height: hp('25.45%'),
         width: wp('40%'),
         marginTop: hp('8.5%'),
         alignSelf: 'center'
     },
     button: {
-        height: hp('15%'),
+        height: hp('15.5%'),
         width: wp('32%'),
         borderRadius: 100,
         backgroundColor: '#eb2b09',
