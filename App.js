@@ -1,11 +1,12 @@
 // import React from 'react'
 // import { View, Text } from 'react-native'
+// import  DoctorMaps from './src/Screen/Maps/DoctorMaps'
 // import ContactList from './src/Screen/Contact'
 
 // export default function App() {
 //   return (
 //     <View>
-//       <ContactList/>
+//       <DoctorMaps/>
 //     </View>
 //   )
 // }
@@ -25,6 +26,7 @@ import { Login, Signup, Splash } from './src/Starter'
 
 import Map from './src/Screen/Map'
 import Chatbox from './src/ChatBox/Chatbox'
+import DoctorMaps from './src/Screen/Maps/DoctorMaps'
 
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
@@ -103,7 +105,11 @@ const App = () => {
             headerShown: true,
             headerRight: () => (<HeaderComp />)
           }} />
-        <Stack.Screen name="MyDrawer" component={MyDrawer} />
+        {/* <Stack.Screen name="MyDrawer" component={MyDrawer} /> */}
+        <Stack.Screen name="DoctorMaps" component={DoctorMaps}
+          options={{
+            headerRight: () => (<HeaderComp />)
+          }} />
 
         <Stack.Screen name="AlertCrete" component={AlertCrete}
           options={{

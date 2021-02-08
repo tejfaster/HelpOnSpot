@@ -1,6 +1,6 @@
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen'
 import IconAnt from 'react-native-vector-icons/AntDesign'
-
+import Icon from 'react-native-vector-icons/FontAwesome'
 
 const uuid = '';
 const setuuid = (u) => {
@@ -39,7 +39,8 @@ const ShivajiPoliceStation = require('../../assets/Shivajinagar_Police_Station.p
 const Team_Outing = require('../../assets/Team_Outing.png')
 const VikramMapComponenr = require('../../assets/Vikram.png')
 const Visvesvaraya = require('../../assets/Visvesvaraya.png')
-
+const Google = require('../../assets/Google_Icon.png')
+const GoogleLocation = require('../../assets/google_Location.png')
 
 
 export {
@@ -48,5 +49,5 @@ export {
     , Dr_Siri_Kamath, Food_and_Friends, Friends_Paradise, Fortis, FriendsMapComponents
     , HebbalPoliceStation, KarnatakaCancer, LalbaghMap, Manipal_Hospital, Mantri_Square
     , NearMapComponent, New_FriendsMapComponent, NorthBangaloreComponent, ShivajiPoliceStation
-    , Team_Outing, VikramMapComponenr, Visvesvaraya
+    , Team_Outing, VikramMapComponenr, Visvesvaraya,Icon,Google,GoogleLocation
 }

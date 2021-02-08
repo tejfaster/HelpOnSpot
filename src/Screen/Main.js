@@ -4,11 +4,11 @@ import { wp, hp } from '../Component/Style'
 import { useNavigation } from '@react-navigation/native'
 
 const image = [
-    require('D:/Digiteck Digital Technologies/HelpOnSpot/assets/Hospital.png'),
-    require('D:/Digiteck Digital Technologies/HelpOnSpot/assets/Police.png'),
-    require('D:/Digiteck Digital Technologies/HelpOnSpot/assets/Docctor.png'),
-    require('D:/Digiteck Digital Technologies/HelpOnSpot/assets/frnd&Famliy.png'),
-    require('D:/Digiteck Digital Technologies/HelpOnSpot/assets/Nearby.png')
+    require('../../assets/Hospital.png'),
+    require('../../assets/Police.png'),
+    require('../../assets/Docctor.png'),
+    require('../../assets/frnd&Famliy.png'),
+    require('../../assets/Nearby.png')
 ]
 
 export default function Main() {
@@ -28,8 +28,9 @@ export default function Main() {
                 rowpic2={image[3]}
                 rowtxt1={"Doctor"}
                 rowtxt2={"Near & Dear"}
-                onPress1={() => navigation.navigate('Map')}
-                onPress2={() => navigation.navigate('Map')} />
+                onPress1={() => navigation.navigate('DoctorMaps')}
+                onPress2={() => navigation.navigate('Map')}
+                 />
 
             <Img
                 pic={image[4]}
@@ -46,7 +47,7 @@ export default function Main() {
                 <CircleButton
                     txt='Alert'
                     style={{height:hp('14%'),width:wp('30%')}}
-                    onpress={()=>navigation.navigate('AlertCrete')}
+                    onpress={() => navigation.navigate('AlertCrete')}
                 />
             </View>
 

@@ -61,7 +61,7 @@ export default function Login({ navigation }) {
                         onChangeText={(text) => handleOnChange('password', text)}
                     />
                     <View style={{ flexDirection: 'row', justifyContent: 'center', margin: wp('2%') }}>
-                        <Button button='Login' onpress={onLoginPress} />
+                        <Button button='Login' onpress={() => navigation.navigate('Need')} />
                         <View style={{ width: wp('2%') }} />
                         <Button button='SignUp' onpress={() => navigation.navigate('Signup')} />
                     </View>

@@ -1,11 +1,6 @@
 import React from 'react'
-import { View, Text, StyleSheet, Image, Dimensions, TouchableOpacity, ImageBackground } from 'react-native'
-import {
-    widthPercentageToDP as wp,
-    heightPercentageToDP as hp,
-} from 'react-native-responsive-screen';
-import Icon from 'react-native-vector-icons/FontAwesome'
-
+import { View, Text, StyleSheet, Image, TouchableOpacity, ImageBackground } from 'react-native'
+import {Male,wp,hp,Icon} from './Style'
 
 
 const HeaderComp = ({centerName}) => {
@@ -13,7 +8,7 @@ const HeaderComp = ({centerName}) => {
     return (
         <View style={{ flexDirection: 'row'}}>
             <Text style={styles.title}>{centerName}</Text>
-            <Image source={require('D:/Digiteck Digital Technologies/HelpOnSpot/assets/Hospital.png')} style={styles.Avatar} />
+            <Image source={Male} style={styles.Avatar} />
             <TouchableOpacity >
                 <Icon
                     name='bars'
