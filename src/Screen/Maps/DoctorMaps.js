@@ -4,7 +4,7 @@ import {
     TouchableOpacity, SafeAreaView, StyleSheet, Button
 } from 'react-native'
 import {
-    DoctorMap, hp, Location, wp, GoogleLocation, Google
+    DoctorMap, hp, wp, GoogleLocation, Google
     , Dr_Juvita, Dr_Raghu, Dr_Siri_Kamath
 } from '../../Component/Style'
 
@@ -43,6 +43,7 @@ export default function DoctorMaps() {
                         onPressSiri={SiriOnpress}
                         imagsource={Dr_Juvita}
                         Juvitavisible={juvita}
+                        transparent={true}
                     /> : null
             }
             {
@@ -55,6 +56,7 @@ export default function DoctorMaps() {
                         onPressSiri={SiriOnpress}
                         imagsource={Dr_Raghu}
                         Raghuvisible={raghu}
+                        transparent={true}
                     /> : null
             }
             {
@@ -67,6 +69,7 @@ export default function DoctorMaps() {
                         onPressJuvita={JuvitaOnpress}
                         imagsource={Dr_Siri_Kamath}
                         Sirivisible={siri}
+                        transparent={true}
                     /> : null
             }
 
@@ -86,6 +89,7 @@ export default function DoctorMaps() {
                     stylebutton={styles.siri}
                     onPress={SiriOnpress}
                 />
+                <Image source={Google} style={styles.google} />
             </ImageBackground>
         </View>
     )
@@ -108,34 +112,33 @@ const Show = ({ transparent, imagsource, visible, Raghuvisible, Juvitavisible,
             visible={visible}
             onRequestClose={onRequestClose}
         >
-            <ImageBackground source={DoctorMap} style={styles.map} >
-                <View >
-                    {Raghuvisible === true ?
-                        <Image source={imagsource} style={[styles.image, styles.modalView]} />
-                        : <Buttons
-                            source={GoogleLocation}
-                            stylebutton={[styles.Raghu]}
-                            onPress={onPressRaghu}
-                        />
-                    }
-                    {Juvitavisible === true ?
-                        <Image source={imagsource} style={[styles.image, styles.modalView]} /> :
-                        <Buttons
-                            source={GoogleLocation}
-                            stylebutton={[styles.juvita]}
-                            onPress={onPressJuvita}
-                        />
-                    }
-                    {Sirivisible === true ?
-                        <Image source={imagsource} style={[styles.image, styles.modalView]} /> :
-                        <Buttons
-                            source={GoogleLocation}
-                            stylebutton={[styles.siri, { marginTop: hp('25.5%') }]}
-                            onPress={onPressSiri}
-                        />
-                    }
-                </View>
-            </ImageBackground>
+
+            <View >
+                {Raghuvisible === true ?
+                    <Image source={imagsource} style={[styles.image, styles.modalView]} />
+                    : <Buttons
+                        source={GoogleLocation}
+                        stylebutton={[styles.Raghu]}
+                        onPress={onPressRaghu}
+                    />
+                }
+                {Juvitavisible === true ?
+                    <Image source={imagsource} style={[styles.image, styles.modalView]} /> :
+                    <Buttons
+                        source={GoogleLocation}
+                        stylebutton={[styles.juvita]}
+                        onPress={onPressJuvita}
+                    />
+                }
+                {Sirivisible === true ?
+                    <Image source={imagsource} style={[styles.image, styles.modalView]} /> :
+                    <Buttons
+                        source={GoogleLocation}
+                        stylebutton={[styles.siri, { marginTop: hp('25.5%') }]}
+                        onPress={onPressSiri}
+                    />
+                }
+            </View>
         </Modal>
 
     )
@@ -171,6 +174,10 @@ const styles = StyleSheet.create({
         marginLeft: wp('20%'),
         marginTop: hp('9%'),
         borderRadius: 15,
-
+    },
+    google: {
+        height: hp('2%'),
+        width: wp('12%'),
+        marginTop: hp('10%')
     }
 })

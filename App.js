@@ -27,6 +27,10 @@ import { Login, Signup, Splash } from './src/Starter'
 import Map from './src/Screen/Map'
 import Chatbox from './src/ChatBox/Chatbox'
 import DoctorMaps from './src/Screen/Maps/DoctorMaps'
+import PoliceMap from './src/Screen/Maps/PoliceMaps'
+import HospitalMap from './src/Screen/Maps/HospitalMaps'
+import NearByMap from './src/Screen/Maps/NearByMaps'
+import Near from  './src/Screen/Maps/Near&DearMaps'
 
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
@@ -106,11 +110,26 @@ const App = () => {
             headerRight: () => (<HeaderComp />)
           }} />
         {/* <Stack.Screen name="MyDrawer" component={MyDrawer} /> */}
-        <Stack.Screen name="DoctorMaps" component={DoctorMaps}
+        <Stack.Screen name="DoctorMap" component={DoctorMaps}
           options={{
             headerRight: () => (<HeaderComp />)
           }} />
-
+          <Stack.Screen name="PoliceMap" component={PoliceMap}
+          options={{
+            headerRight: () => (<HeaderComp />)
+          }} />
+          <Stack.Screen name="HospitaleMap" component={HospitalMap}
+          options={{
+            headerRight: () => (<HeaderComp />)
+          }} />
+          <Stack.Screen name="NearByMap" component={NearByMap}
+          options={{
+            headerRight: () => (<HeaderComp />)
+          }} />
+          <Stack.Screen name="Near&Dear" component={Near}
+          options={{
+            headerRight: () => (<HeaderComp />)
+          }} />
         <Stack.Screen name="AlertCrete" component={AlertCrete}
           options={{
             headerRight: () => (<HeaderComp />)

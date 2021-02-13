@@ -41,7 +41,12 @@ const VikramMapComponenr = require('../../assets/Vikram.png')
 const Visvesvaraya = require('../../assets/Visvesvaraya.png')
 const Google = require('../../assets/Google_Icon.png')
 const GoogleLocation = require('../../assets/google_Location.png')
-
+const GooglePolice = require('../../assets/google_Location_police.png')
+const Ambulance = require('../../assets/ambulance.png')
+const girl = require('../../assets/pr1.png')
+const girl1 = require('../../assets/pr2.png')
+const boy = require('../../assets/pr3.png')
+const boy1 = require('../../assets/pr4.png')
 
 export {
     wp, hp, IconAnt, uuid, setuuid, Logo, BackgroundImage, Splash, Location, Male, Female, HospitalMap, PoliceMap, DoctorMap, Near_Dear_Map,
@@ -49,5 +54,6 @@ export {
     , Dr_Siri_Kamath, Food_and_Friends, Friends_Paradise, Fortis, FriendsMapComponents
     , HebbalPoliceStation, KarnatakaCancer, LalbaghMap, Manipal_Hospital, Mantri_Square
     , NearMapComponent, New_FriendsMapComponent, NorthBangaloreComponent, ShivajiPoliceStation
-    , Team_Outing, VikramMapComponenr, Visvesvaraya,Icon,Google,GoogleLocation
+    , Team_Outing, VikramMapComponenr, Visvesvaraya,Icon,Google,GoogleLocation,GooglePolice
+    ,Ambulance,girl,girl1,boy,boy1 
 }

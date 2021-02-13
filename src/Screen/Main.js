@@ -20,22 +20,22 @@ export default function Main() {
                 rowpic2={image[1]}
                 rowtxt1={"Hospital"}
                 rowtxt2={"Police"}
-                onPress1={() => navigation.navigate('Map')}
-                onPress2={() => navigation.navigate('Map')} />
+                onPress1={() => navigation.navigate('HospitaleMap')}
+                onPress2={() => navigation.navigate('PoliceMap')} />
 
             <RowImg
                 rowpic1={image[2]}
                 rowpic2={image[3]}
                 rowtxt1={"Doctor"}
                 rowtxt2={"Near & Dear"}
-                onPress1={() => navigation.navigate('DoctorMaps')}
-                onPress2={() => navigation.navigate('Map')}
+                onPress1={() => navigation.navigate('DoctorMap')}
+                onPress2={() => navigation.navigate('Near&Dear')}
                  />
 
             <Img
                 pic={image[4]}
                 txt={"NearBy"}
-                click={() => navigation.navigate('Map')} />
+                click={() => navigation.navigate('NearByMap')} />
 
             <View style={{
                 flexDirection: 'row',

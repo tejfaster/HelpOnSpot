@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "896837618897",
+    "firebase_url": "https://heplonspot-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "heplonspot",
+    "storage_bucket": "heplonspot.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:896837618897:android:d1d26091cb6e32512d09f0",
+        "android_client_info": {
+          "package_name": "com.helponspot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "896837618897-2ha6lldh7ki7fhgju19t5nu8lffpph8t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBS-Qsvy2G_oOTQP6Ulk73bSP7Jaixvx18"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "896837618897-2ha6lldh7ki7fhgju19t5nu8lffpph8t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
